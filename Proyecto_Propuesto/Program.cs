@@ -24,7 +24,8 @@ namespace CálculoDeCuentaConPropinas
 
             String montoLetras = NumeroLetra((int)totalConPropina);
 
-            double montoPorPersona = totalConPropina / personas;
+            double montoPorPersona = Math.Floor(totalConPropina / personas * 100) / 100;
+            double resto = Math.Round(totalConPropina - (montoPorPersona * personas), 2);
 
             DateTime fechaHora = DateTime.Now;
 
@@ -37,6 +38,19 @@ namespace CálculoDeCuentaConPropinas
             Console.WriteLine($"   PROPINA ({porcentajePropina}%)           {propina:C}");
             Console.WriteLine($"   TOTAL CON PROPINA      {totalConPropina:C}");
             Console.WriteLine($"   MONTO POR PERSONA      {montoPorPersona:C}");
+
+            for (int i = 0; i < personas; i++)
+            {
+                if (i == 0)
+                {
+                    Console.WriteLine($"   MONTO POR PERSONA {i + 1}: {montoPorPersona + resto:C}");
+                }
+                else
+                {
+                    Console.WriteLine($"   MONTO POR PERSONA {i + 1}: {montoPorPersona:C}");
+                }
+            }
+
             Console.WriteLine($"   MONTO EN LETRAS        {montoLetras}");
             Console.WriteLine("  ___________________________________________ ");
 
