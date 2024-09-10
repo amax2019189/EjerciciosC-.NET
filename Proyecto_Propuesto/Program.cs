@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Globalization;
 
 namespace CálculoDeCuentaConPropinas
 {
@@ -22,7 +19,7 @@ namespace CálculoDeCuentaConPropinas
             double propina = monto * porcentajePropina / 100;
             double totalConPropina = monto + propina;
 
-            String montoLetras = NumeroLetra((int)totalConPropina);
+            string montoLetras = NumeroALetras(totalConPropina);
 
             double montoPorPersona = Math.Floor(totalConPropina / personas * 100) / 100;
             double resto = Math.Round(totalConPropina - (montoPorPersona * personas), 2);
@@ -37,17 +34,16 @@ namespace CálculoDeCuentaConPropinas
             Console.WriteLine($"   TOTAL                  {monto:C}");
             Console.WriteLine($"   PROPINA ({porcentajePropina}%)           {propina:C}");
             Console.WriteLine($"   TOTAL CON PROPINA      {totalConPropina:C}");
-            Console.WriteLine($"   MONTO POR PERSONA      {montoPorPersona:C}");
 
             for (int i = 0; i < personas; i++)
             {
                 if (i == 0)
                 {
-                    Console.WriteLine($"   MONTO POR PERSONA {i + 1}: {montoPorPersona + resto:C}");
+                    Console.WriteLine($"   MONTO POR PERSONA {i + 1}:   {montoPorPersona + resto:C}");
                 }
                 else
                 {
-                    Console.WriteLine($"   MONTO POR PERSONA {i + 1}: {montoPorPersona:C}");
+                    Console.WriteLine($"   MONTO POR PERSONA {i + 1}:   {montoPorPersona:C}");
                 }
             }
 
@@ -57,44 +53,49 @@ namespace CálculoDeCuentaConPropinas
             Console.ReadLine();
         }
 
-        public static string NumeroLetra(int numero)
+        public static string NumeroALetras(double numero)
         {
-            if (numero == 0)
-                return "cero";
+            long parteEntera = (long)Math.Floor(numero);
+            int parteDecimal = (int)Math.Round((numero - parteEntera) * 100);
 
-            if (numero < 10)
-                return Unidades[numero];
-
-            if (numero < 20)
-                return Especiales[numero - 10];
-
-            if (numero < 100)
-            {
-                int decena = numero / 10;
-                int unidad = numero % 10;
-                if (unidad == 0)
-                    return Decenas[decena];
-                return $"{Decenas[decena]} y {Unidades[unidad]}";
-            }
-
-            if (numero < 1000)
-            {
-                int centena = numero / 100;
-                int resto = numero % 100;
-                if (resto == 0)
-                    return $"{Centenas[centena]}";
-                return $"{Centenas[centena]} {NumeroLetra(resto)}";
-            }
-
-            if (numero == 1000)
-                return "mil";
-
-            return "número demasiado grande para convertir";
+            return $"{NumeroLetra(parteEntera)} con {parteDecimal:00}/100";
         }
 
-        static readonly string[] Unidades = { "", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve" };
-        static readonly string[] Decenas = { "", "diez", "veinte", "treinta", "cuarenta", "cincuenta", "sesenta", "setenta", "ochenta", "noventa" };
-        static readonly string[] Especiales = { "diez", "once", "doce", "trece", "catorce", "quince", "dieciséis", "diecisiete", "dieciocho", "diecinueve" };
-        static readonly string[] Centenas = { "", "cien", "doscientos", "trescientos", "cuatrocientos", "quinientos", "seiscientos", "setecientos", "ochocientos", "novecientos" };
+        public static string NumeroLetra(long numero)
+        {
+            string[] unidades = { "", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve", "diez", "once", "doce", "trece", "catorce", "quince", "dieciséis", "diecisiete", "dieciocho", "diecinueve" };
+            string[] decenas = { "", "", "veinte", "treinta", "cuarenta", "cincuenta", "sesenta", "setenta", "ochenta", "noventa" };
+            string[] centenas = { "", "ciento", "doscientos", "trescientos", "cuatrocientos", "quinientos", "seiscientos", "setecientos", "ochocientos", "novecientos" };
+
+            if (numero == 0) return "cero";
+            if (numero == 100) return "cien";
+            if (numero == 1000) return "mil";
+
+            string resultado = "";
+
+            if (numero >= 100)
+            {
+                long centena = numero / 100;
+                resultado += centenas[centena];
+                numero %= 100;
+
+                if (numero > 0) resultado += " ";
+            }
+
+            if (numero > 0 && numero < 20)
+            {
+                resultado += unidades[numero];
+            }
+            else if (numero >= 20)
+            {
+                long decena = numero / 10;
+                resultado += decenas[decena];
+                numero %= 10;
+
+                if (numero > 0) resultado += " y " + unidades[numero];
+            }
+
+            return resultado;
+        }
     }
 }
