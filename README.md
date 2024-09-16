@@ -1,3 +1,3 @@
 # EjerciciosC-.NET
 
-Alejnadro Benjamin Max López
+Alejandro Benjamin Max López
