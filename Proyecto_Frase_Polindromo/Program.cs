@@ -32,7 +32,7 @@ namespace FrasePalindromo
             Console.ReadLine();
         }
 
-        static string InvertirPalabra(string frase)
+        public static string InvertirPalabra(string frase)
         {
             char[] caracteres = frase.ToCharArray();
             Array.Reverse(caracteres);
