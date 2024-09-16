@@ -20,7 +20,7 @@ namespace FrasePalindromo
 
             String resultado = InvertirPalabra(frase);
 
-            if (frase == resultado)
+            if (fraseLimpia == resultado)
             {
                 Console.WriteLine("La palabra " + resultado + " si es palíndromo");
             }
