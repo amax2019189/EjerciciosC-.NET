@@ -14,8 +14,8 @@ namespace EjerciciosSemana4
         {
             Autor = autor;
         }
-        
-        public void Prestar()
+                
+        public override void Prestar()
         {
             if (Disponible)
             {
@@ -28,7 +28,7 @@ namespace EjerciciosSemana4
             }
         }
 
-        public void Devolver()
+        public override void Devolver()
         {
             if (!Disponible)
             {

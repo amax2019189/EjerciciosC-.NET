@@ -14,11 +14,13 @@ namespace EjerciciosSemana4
 
             Libro libro1 = new Libro("El Señor de los anillos", "J.R.R. Tolkien");
             Libro libro2 = new Libro("Mil leguas de viaje submarino", "Julio Verne");
+            Libro libro3 = new Libro("El algo ", "Pato");
 
             Revista revista1 = new Revista("National Geographic", 1);
 
             biblioteca.AgregarMaterial(libro1);
             biblioteca.AgregarMaterial(libro2);
+            biblioteca.AgregarMaterial(libro3);
             biblioteca.AgregarMaterial(revista1);
 
             Console.WriteLine("  ____________________________ ");

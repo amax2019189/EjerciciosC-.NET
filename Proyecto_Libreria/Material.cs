@@ -16,5 +16,8 @@ namespace EjerciciosSemana4
             Titulo = titulo;
             Disponible = true;
         }
+
+        public abstract void Prestar();
+        public abstract void Devolver();
     }
 }

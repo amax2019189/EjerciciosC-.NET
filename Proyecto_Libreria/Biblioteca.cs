@@ -18,7 +18,17 @@ namespace EjerciciosSemana4
 
         public List<Material> BuscarPorTitulo(string titulo)
         {
+
+            titulo = titulo.Trim();
+
+            if (string.IsNullOrWhiteSpace(titulo) || titulo.Length < 2)
+            {
+                Console.WriteLine(" Debes ingresar al menos dos caracteres para realizar una busqueda");
+                return new List<Material>();
+            }
+
             var resultados = materiales.Where(m => m.Titulo.IndexOf(titulo, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+
             if (resultados.Count == 0)
             {
                 Console.WriteLine($" No se encontraron materiales con el titulo: {titulo}");
@@ -28,28 +38,12 @@ namespace EjerciciosSemana4
 
         public void PrestarMaterial(Material material)
         {
-            if (material.Disponible)
-            {
-                material.Disponible = false;
-                Console.WriteLine($" El material '{material.Titulo}' ha sido prestado");
-            }
-            else
-            {
-                Console.WriteLine($" El material '{material.Titulo}' no esta disponible");
-            }
+            material.Prestar();
         }
 
         public void DevolverMaterial(Material material)
         {
-            if (!material.Disponible)
-            {
-                material.Disponible = true;
-                Console.WriteLine($" El materail '{material.Titulo}' ha sido devuelto");
-            }
-            else
-            {
-                Console.WriteLine($" El material '{material.Titulo}' esta disponible");
-            }
+            material.Devolver();
         }
     }
 }

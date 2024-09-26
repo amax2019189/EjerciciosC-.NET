@@ -15,16 +15,29 @@ namespace EjerciciosSemana4
             Edicion = edicion;
         }
 
-        public void Prestar()
+        public override void Prestar()
         {
             if (Disponible)
             {
                 Disponible = false;
-                Console.WriteLine($" El libro '{Titulo}' ha sido prestado");
+                Console.WriteLine($" La revista '{Titulo}' ha sido prestado");
             }
             else
             {
-                Console.WriteLine($" El libro '{Titulo}' no esta disponible");
+                Console.WriteLine($" La revista '{Titulo}' no esta disponible");
+            }
+        }
+
+        public override void Devolver()
+        {
+            if (!Disponible)
+            {
+                Disponible = true;
+                Console.WriteLine($" La revista '{Titulo}' ha sido devuelto");
+            }
+            else
+            {
+                Console.WriteLine($" La revista '{Titulo}' esta disponible");
             }
         }
     }
