@@ -1,0 +1,7 @@
+C:\Users\alejo\source\repos\ProyectoSemana5\ProyectoSemana5\bin\Debug\ProyectoSemana5.exe.config
+C:\Users\alejo\source\repos\ProyectoSemana5\ProyectoSemana5\bin\Debug\ProyectoSemana5.exe
+C:\Users\alejo\source\repos\ProyectoSemana5\ProyectoSemana5\bin\Debug\ProyectoSemana5.pdb
+C:\Users\alejo\source\repos\ProyectoSemana5\ProyectoSemana5\obj\Debug\ProyectoSemana5.csproj.AssemblyReference.cache
+C:\Users\alejo\source\repos\ProyectoSemana5\ProyectoSemana5\obj\Debug\ProyectoSemana5.csproj.CoreCompileInputs.cache
+C:\Users\alejo\source\repos\ProyectoSemana5\ProyectoSemana5\obj\Debug\ProyectoSemana5.exe
+C:\Users\alejo\source\repos\ProyectoSemana5\ProyectoSemana5\obj\Debug\ProyectoSemana5.pdb

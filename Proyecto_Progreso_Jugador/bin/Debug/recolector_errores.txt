@@ -1,0 +1,16 @@
+27/09/2024 23:39:15: Caracteres no válidos en la ruta de acceso.
+   en System.IO.Path.CheckInvalidPathChars(String path, Boolean checkAdditional)
+   en System.IO.Path.Combine(String path1, String path2)
+   en ProyectoSemana5.Jugador.GuardarProgreso(String carpeta) en C:\Users\alejo\source\repos\ProyectoSemana5\ProyectoSemana5\Jugador.cs:línea 31
+27/09/2024 23:39:15: Caracteres no válidos en la ruta de acceso.
+   en System.IO.Path.CheckInvalidPathChars(String path, Boolean checkAdditional)
+   en System.IO.Path.Combine(String path1, String path2)
+   en ProyectoSemana5.Jugador.GuardarProgreso(String carpeta) en C:\Users\alejo\source\repos\ProyectoSemana5\ProyectoSemana5\Jugador.cs:línea 31
+27/09/2024 23:39:15: Caracteres no válidos en la ruta de acceso.
+   en System.IO.Path.CheckInvalidPathChars(String path, Boolean checkAdditional)
+   en System.IO.Path.Combine(String path1, String path2)
+   en ProyectoSemana5.Jugador.GuardarProgreso(String carpeta) en C:\Users\alejo\source\repos\ProyectoSemana5\ProyectoSemana5\Jugador.cs:línea 31
+27/09/2024 23:39:15: Caracteres no válidos en la ruta de acceso.
+   en System.IO.Path.CheckInvalidPathChars(String path, Boolean checkAdditional)
+   en System.IO.Path.Combine(String path1, String path2)
+   en ProyectoSemana5.Jugador.GuardarProgreso(String carpeta) en C:\Users\alejo\source\repos\ProyectoSemana5\ProyectoSemana5\Jugador.cs:línea 31

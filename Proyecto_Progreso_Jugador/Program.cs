@@ -100,7 +100,7 @@ namespace ProyectoSemana5
 
             Console.WriteLine("");
             List<Jugador> jugadoresCargados = Jugador.CargarTodosLosJugadores(carpeta);
-            
+
             Console.WriteLine("");
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine(" | JUGADORES GUARDADOS |");
