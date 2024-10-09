@@ -14,30 +14,6 @@ namespace ProyectoSemana6
         public Chistes(string filePath)
         {
             _filePath = filePath;
-            VerificarArchivo();
-        }
-
-        public void VerificarArchivo()
-        {
-            if (!File.Exists(_filePath))
-            {
-                using (File.Create(_filePath))
-                {
-                }
-                Console.WriteLine("Archivo creado: " + _filePath);
-            }
-        }
-
-        public async Task<string> ChisteAleatorio()
-        {
-            using (HttpClient client = new HttpClient())
-            {
-                HttpResponseMessage response = await client.GetAsync("https://api.chucknorris.io/jokes/random");
-                response.EnsureSuccessStatusCode();
-                string responseBody = await response.Content.ReadAsStringAsync();
-                var chiste = JsonConvert.DeserializeObject<dynamic>(responseBody);
-                return chiste.value;
-            }
         }
 
         public bool ChisteDuplicado(string chiste)

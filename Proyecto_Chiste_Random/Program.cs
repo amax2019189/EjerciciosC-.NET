@@ -18,7 +18,8 @@ namespace ProyectoSemana6
         static async Task Main(string[] args)
         {
             string filePath = "Chiste.txt";
-            Chistes chisteRandom = new Chistes(filePath);
+            API_Services apiServices = new API_Services(filePath);
+            Chistes chisteServices = new Chistes(filePath);
             bool correr = true;
 
             while (correr)
@@ -59,10 +60,15 @@ namespace ProyectoSemana6
                 switch (seleccionar)
                 {
                     case Menu.NuevoChiste:
-                        string chiste = await chisteRandom.ChisteAleatorio();
-                        if (!chisteRandom.ChisteDuplicado(chiste))
+                        string nuevochiste = await apiServices.ChisteAleatorio();
+                        if (!chisteServices.ChisteDuplicado(nuevochiste))
                         {
-                            chisteRandom.GuardarChiste(chiste);
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("");
+                            Console.WriteLine($" Chiste: {nuevochiste}");
+                            Console.ResetColor();
+                            Console.WriteLine("");
+                            chisteServices.GuardarChiste(nuevochiste);
                             Console.WriteLine(" Chiste guardado...");
                         }
                         else
@@ -74,7 +80,7 @@ namespace ProyectoSemana6
                     case Menu.BuscarChiste:
                         Console.Write(" Ingrese una palabra clave: ");
                         string resp = Console.ReadLine();
-                        chisteRandom.BuscarChiste(resp);
+                        chisteServices.BuscarChiste(resp);
                         break;
 
                     case Menu.Salir:
