@@ -1,0 +1,10 @@
+C:\Users\alejo\source\repos\ProyectoSemana6\ProyectoSemana6\bin\Debug\ProyectoSemana6.exe.config
+C:\Users\alejo\source\repos\ProyectoSemana6\ProyectoSemana6\bin\Debug\ProyectoSemana6.exe
+C:\Users\alejo\source\repos\ProyectoSemana6\ProyectoSemana6\bin\Debug\ProyectoSemana6.pdb
+C:\Users\alejo\source\repos\ProyectoSemana6\ProyectoSemana6\obj\Debug\ProyectoSemana6.csproj.AssemblyReference.cache
+C:\Users\alejo\source\repos\ProyectoSemana6\ProyectoSemana6\obj\Debug\ProyectoSemana6.csproj.CoreCompileInputs.cache
+C:\Users\alejo\source\repos\ProyectoSemana6\ProyectoSemana6\obj\Debug\ProyectoSemana6.exe
+C:\Users\alejo\source\repos\ProyectoSemana6\ProyectoSemana6\obj\Debug\ProyectoSemana6.pdb
+C:\Users\alejo\source\repos\ProyectoSemana6\ProyectoSemana6\bin\Debug\Newtonsoft.Json.dll
+C:\Users\alejo\source\repos\ProyectoSemana6\ProyectoSemana6\bin\Debug\Newtonsoft.Json.xml
+C:\Users\alejo\source\repos\ProyectoSemana6\ProyectoSemana6\obj\Debug\ProyectoSemana6.csproj.CopyComplete
